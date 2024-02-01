@@ -1,0 +1,60 @@
+﻿@page
+@model FribergCarRentalsRazorP.Pages.Vehicles.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Vehicles.ElementAt(0).Make)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Vehicles.ElementAt(0).Model)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Vehicles.ElementAt(0).ModelYear)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Vehicles.ElementAt(0).Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Vehicles.ElementAt(0).VehiclePicture)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Vehicles) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Make)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Model)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ModelYear)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VehiclePicture)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
