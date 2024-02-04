@@ -26,12 +26,12 @@ namespace FribergCarRentalsRazorP.Data.Repositorys
         }
         public IEnumerable<Booking> GetAll()
         {
-            return fribergCarRentalsRazorPContext.Bookings.OrderBy(b => b.BookingStart);
+            return fribergCarRentalsRazorPContext.Bookings.OrderBy(b => b.BookingStart).Include(c=>c.Customer).Include(v=>v.Vehicle);
         }
 
         public Booking GetById(int id)
         {
-            return fribergCarRentalsRazorPContext.Bookings.FirstOrDefault(b => b.Id == id);
+            return fribergCarRentalsRazorPContext.Bookings.Include(c => c.Customer).Include(v => v.Vehicle).FirstOrDefault(b => b.Id == id);
         }
         public void Update(Booking booking)
         {

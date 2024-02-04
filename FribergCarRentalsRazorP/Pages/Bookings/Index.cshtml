@@ -14,7 +14,7 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Bookings.ElementAt(0).Customer.Id)
+                @Html.DisplayNameFor(model => model.Bookings.ElementAt(0).Id)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Bookings.ElementAt(0).BookingStart)
@@ -23,7 +23,7 @@
                 @Html.DisplayNameFor(model => model.Bookings.ElementAt(0).BookingEnd)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Bookings.ElementAt(0).Vehicle.Id)
+                @Html.DisplayNameFor(model => model.Bookings.ElementAt(0).Customer.Email)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Bookings.ElementAt(0).Vehicle.Make)
@@ -41,7 +41,7 @@
 @foreach (var item in Model.Bookings) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Customer.Id)
+                @Html.DisplayFor(modelItem => item.Id)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.BookingStart)
@@ -50,7 +50,7 @@
                 @Html.DisplayFor(modelItem => item.BookingEnd)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Vehicle.Id)
+                @Html.DisplayFor(modelItem => item.Customer.Email)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Vehicle.Make)
@@ -62,7 +62,7 @@
                 @Html.DisplayFor(modelItem => item.Vehicle.ModelYear)
             </td>
             <td>
-                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-page="./Edit" asp-route-id="@item.Id">Edit date</a> |
                 <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
                 <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
             </td>

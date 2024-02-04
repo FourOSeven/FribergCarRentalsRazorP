@@ -24,7 +24,12 @@ namespace FribergCarRentalsRazorP.Pages.Bookings
 
         public async Task OnGetAsync()
         {
-            Bookings = bookingRepository.GetAll();//await _context.Admins.ToListAsync();
+            var customer = HttpContext.Session.GetInt32("CustomerId");
+            if(customer != null)
+            {
+                Bookings = bookingRepository.GetAll().Where(b => b.Customer.Id == customer);
+            }
+            Bookings = bookingRepository.GetAll();
         }
     }
 }

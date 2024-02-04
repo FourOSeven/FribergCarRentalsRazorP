@@ -46,8 +46,8 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Password)
             </td>
-            <td>
-                <a asp-page="/Bookings/Create" asp-route-id="@item.Id">New Booking</a> |
+            <td>   
+                <a asp-page="/Bookings/IndexVehicleBooking" asp-route-Id="@item.Id">New Booking</a> |
                 <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
                 <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
                 <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>

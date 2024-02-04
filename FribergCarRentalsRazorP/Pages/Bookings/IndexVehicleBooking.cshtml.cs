@@ -10,19 +10,23 @@ using FribergCarRentalsRazorP.Data.Interfaces;
 
 namespace FribergCarRentalsRazorP.Pages.Bookings
 {
-    public class IndexCustomerModel : PageModel
+    public class IndexVehicleBookingModel : PageModel
     {
         private readonly IVehicle vehicleRepository;
 
-        public IndexCustomerModel(IVehicle vehicleRepository)
+        public IndexVehicleBookingModel(IVehicle vehicleRepository)
         {
             this.vehicleRepository = vehicleRepository;
         }
 
         public IEnumerable<Vehicle> Vehicles { get; set; } = default!;
 
-        public async Task OnGetAsync()
+        public async Task OnGetAsync(int? id)
         {
+            if (id != null)
+            {
+                HttpContext.Session.SetInt32("CustomerId", (int)id);
+            }
             Vehicles = vehicleRepository.GetAll();
         }
     }

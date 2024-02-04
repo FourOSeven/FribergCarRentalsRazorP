@@ -23,7 +23,7 @@ namespace FribergCarRentalsRazorP.Pages.Customers
 
         public async Task OnGetAsync()
         {
-            Customers = customerRepository.GetAll();//await _context.Admins.ToListAsync();
+            Customers = customerRepository.GetAll();
         }
     }
 }
