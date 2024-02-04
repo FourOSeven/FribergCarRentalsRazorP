@@ -18,11 +18,18 @@ namespace FribergCarRentalsRazorP
             builder.Services.AddDbContext<FribergCarRentalsRazorPContext>(options =>
                 options.UseSqlServer(builder.Configuration.GetConnectionString("FribergCarRentalsRazorPContext") ?? throw new InvalidOperationException("Connection string 'FribergCarRentalsRazorPContext' not found.")));
            
-            //builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=FredrikCarRentalsDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False"));
             builder.Services.AddTransient<ICustomer, CustomerRepository>();
             builder.Services.AddTransient<IAdmin, AdminRepository>();
             builder.Services.AddTransient<IVehicle, VehicleRepository>();
             builder.Services.AddTransient<IBooking, BookingRepository>();
+            builder.Services.AddDistributedMemoryCache();
+
+            builder.Services.AddSession(options =>
+            {
+                options.IdleTimeout = TimeSpan.FromSeconds(10);
+                options.Cookie.HttpOnly = true;
+                options.Cookie.IsEssential = true;
+            });
 
             var app = builder.Build();
 
@@ -40,6 +47,8 @@ namespace FribergCarRentalsRazorP
             app.UseRouting();
 
             app.UseAuthorization();
+
+            app.UseSession();
 
             app.MapRazorPages();
 

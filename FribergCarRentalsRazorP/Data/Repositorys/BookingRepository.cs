@@ -1,4 +1,5 @@
 ﻿using FribergCarRentalsRazorP.Data.Interfaces;
+using Microsoft.EntityFrameworkCore;
 
 namespace FribergCarRentalsRazorP.Data.Repositorys
 {
@@ -13,6 +14,8 @@ namespace FribergCarRentalsRazorP.Data.Repositorys
         public void Add(Booking booking)
         {
             fribergCarRentalsRazorPContext.Add(booking);
+            fribergCarRentalsRazorPContext.Entry(booking.Customer).State = EntityState.Unchanged;
+            fribergCarRentalsRazorPContext.Entry(booking.Vehicle).State = EntityState.Unchanged;
             fribergCarRentalsRazorPContext.SaveChanges();
         }
 
