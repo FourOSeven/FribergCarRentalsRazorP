@@ -38,7 +38,7 @@ namespace FribergCarRentalsRazorP.Pages.Admins
                 {
                    adminRepository.Add(Admin);
                 }
-                return RedirectToPage("./Index");
+                return RedirectToPage("./Home");
             }
             catch
             {

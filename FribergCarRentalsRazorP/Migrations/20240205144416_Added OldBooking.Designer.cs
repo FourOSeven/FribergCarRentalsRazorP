@@ -4,6 +4,7 @@ using FribergCarRentalsRazorP.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FribergCarRentalsRazorP.Migrations
 {
     [DbContext(typeof(FribergCarRentalsRazorPContext))]
-    partial class FribergCarRentalsRazorPContextModelSnapshot : ModelSnapshot
+    [Migration("20240205144416_Added OldBooking")]
+    partial class AddedOldBooking
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -68,9 +71,6 @@ namespace FribergCarRentalsRazorP.Migrations
                     b.Property<int>("CustomerId")
                         .HasColumnType("int");
 
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
-
                     b.Property<int>("VehicleId")
                         .HasColumnType("int");
 
@@ -110,6 +110,24 @@ namespace FribergCarRentalsRazorP.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Customers");
+                });
+
+            modelBuilder.Entity("FribergCarRentalsRazorP.Data.OldBooking", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("BookingId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("BookingId");
+
+                    b.ToTable("OldBookings");
                 });
 
             modelBuilder.Entity("FribergCarRentalsRazorP.Data.Vehicle", b =>
@@ -160,6 +178,17 @@ namespace FribergCarRentalsRazorP.Migrations
                     b.Navigation("Customer");
 
                     b.Navigation("Vehicle");
+                });
+
+            modelBuilder.Entity("FribergCarRentalsRazorP.Data.OldBooking", b =>
+                {
+                    b.HasOne("FribergCarRentalsRazorP.Data.Booking", "Booking")
+                        .WithMany()
+                        .HasForeignKey("BookingId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Booking");
                 });
 #pragma warning restore 612, 618
         }

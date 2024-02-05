@@ -7,6 +7,7 @@ namespace FribergCarRentalsRazorP.Data.Repositorys
     {
         private readonly FribergCarRentalsRazorPContext fribergCarRentalsRazorPContext;
 
+
         public BookingRepository(FribergCarRentalsRazorPContext fribergCarRentalsRazorPContext)
         {
             this.fribergCarRentalsRazorPContext = fribergCarRentalsRazorPContext;
@@ -20,7 +21,7 @@ namespace FribergCarRentalsRazorP.Data.Repositorys
         }
 
         public void Delete(Booking booking)
-        {
+        {         
             fribergCarRentalsRazorPContext.Remove(booking);
             fribergCarRentalsRazorPContext.SaveChanges();
         }

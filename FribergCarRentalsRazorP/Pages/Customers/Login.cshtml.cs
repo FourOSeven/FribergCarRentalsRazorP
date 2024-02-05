@@ -40,7 +40,7 @@ namespace FribergCarRentalsRazorP.Pages.Customers
             if (customerFound != null) 
             {
                 HttpContext.Session.SetInt32("CustomerId",customerFound.Id);
-                return RedirectToPage("/Bookings/IndexCustomer");
+                return RedirectToPage("./Home");
             }
             return Page();
         }

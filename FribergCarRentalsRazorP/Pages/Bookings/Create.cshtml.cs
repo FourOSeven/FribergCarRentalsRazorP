@@ -57,7 +57,7 @@ namespace FribergCarRentalsRazorP.Pages.Bookings
                         return RedirectToPage("/Admins/Home");
                     }
                 }
-                return RedirectToPage("./Index");
+                return RedirectToPage("./BookingSuccess");
             }
             catch
             {

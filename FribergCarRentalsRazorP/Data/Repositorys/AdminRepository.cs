@@ -12,13 +12,13 @@ namespace FribergCarRentalsRazorP.Data.Repositorys
         }
         public void Add(Admin admin)
         {
-            FribergCarRentalsRazorPContext.Add<Admin>(admin);
-            FribergCarRentalsRazorPContext.SaveChangesAsync();
+            FribergCarRentalsRazorPContext.Admins.Add(admin);
+            FribergCarRentalsRazorPContext.SaveChanges();
         }
 
         public void Delete(Admin admin)
         {
-            FribergCarRentalsRazorPContext.Remove<Admin>(admin);
+            FribergCarRentalsRazorPContext.Admins.Remove(admin);
             FribergCarRentalsRazorPContext.SaveChanges();
         }
 
