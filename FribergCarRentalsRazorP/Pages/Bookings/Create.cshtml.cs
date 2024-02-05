@@ -25,15 +25,15 @@ namespace FribergCarRentalsRazorP.Pages.Bookings
         }
         [BindProperty]
         public Booking Booking { get; set; } = default!;
-        public IEnumerable<Vehicle> Vehicles { get; set; }
-        public IActionResult OnGet(int? id,int? vehicleId)
+        public IActionResult OnGet(int vehicleId)
         {
-            Vehicles = vehicleRepository.GetAll();
-            var vehicle = Vehicles.FirstOrDefault(v=>v.Id == vehicleId);
+            var vehicle = vehicleRepository.GetById(vehicleId);
+            //var vehicle = Vehicles.FirstOrDefault(v=>v.Id == vehicleId);
             var customerId = HttpContext.Session.GetInt32("CustomerId");
-            if (id != null)
+            var adminCustomerId = HttpContext.Session.GetInt32("AdminCustomerId");
+            if (adminCustomerId != null)
             {
-                var customer =  customerRepository.GetById(id);
+                var customer =  customerRepository.GetById(adminCustomerId);
                 Booking = CustomerDataInsert(customer, vehicle);
             }
             else
@@ -51,7 +51,11 @@ namespace FribergCarRentalsRazorP.Pages.Bookings
                 if (ModelState.IsValid)
                 {
                     bookingRepository.Add(Booking);
-                   
+                    var adminCustomerId = HttpContext.Session.GetInt32("AdminCustomerId");
+                   if(adminCustomerId != null)
+                    {
+                        return RedirectToPage("/Admins/Home");
+                    }
                 }
                 return RedirectToPage("./Index");
             }

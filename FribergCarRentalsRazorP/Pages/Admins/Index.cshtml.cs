@@ -19,11 +19,28 @@ namespace FribergCarRentalsRazorP.Pages.Admins
 
             this.adminRepository = adminRepository;
         }
-        public IEnumerable<Admin> Admins { get;set; } = default!;
 
-        public async Task OnGetAsync()
+        [BindProperty]
+        public Admin Admin { get; set; } = default!;
+        public IEnumerable<Admin> Admins { get; set; } = default!;
+
+        public async Task<IActionResult> OnGetAsync()
         {
-            Admins = adminRepository.GetAll();//await _context.Admins.ToListAsync();
+            return Page();
+        }
+
+        // To protect from overposting attacks, enable the specific properties you want to bind to.
+        // For more details, see https://aka.ms/RazorPagesCRUD.
+        public async Task<IActionResult> OnPostAsync(Admin admin)
+        {
+            Admins = adminRepository.GetAll();
+
+            var adminFound = Admins.FirstOrDefault(c => c.Email == admin.Email && c.Password == admin.Password);
+            if (adminFound != null)
+            {   
+                return RedirectToPage("./Home");
+            }
+            return Page();
         }
     }
 }

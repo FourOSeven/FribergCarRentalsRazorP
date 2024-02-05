@@ -25,7 +25,7 @@ namespace FribergCarRentalsRazorP.Pages.Bookings
         {
             if (id != null)
             {
-                HttpContext.Session.SetInt32("CustomerId", (int)id);
+                HttpContext.Session.SetInt32("AdminCustomerId", (int)id);
             }
             Vehicles = vehicleRepository.GetAll();
         }
