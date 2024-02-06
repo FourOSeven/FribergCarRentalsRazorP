@@ -34,7 +34,6 @@ namespace FribergCarRentalsRazorP.Pages.Admins
         public IActionResult OnPost(Admin admin)
         {
             Admins = adminRepository.GetAll();
-
             var adminFound = Admins.FirstOrDefault(c => c.Email == admin.Email && c.Password == admin.Password);
             if (adminFound != null)
             {   

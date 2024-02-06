@@ -16,13 +16,20 @@
             <input type="hidden" asp-for="Customer.FirstName" class="form-control" />
             <input type="hidden" asp-for="Customer.LastName" class="form-control" />
             </div>
-            @if (ViewData["ErrorMessage"] != null)
-            {
-                <div class="text-danger">
-                    @ViewData["ErrorMessage"]
-                </div>
-            }
-            
+            <div>
+				@if (ViewData["NotLoggedIn"] != null)
+				{
+					<div class="text-danger">
+						@ViewData["NotLoggedIn"]
+					</div>
+				}
+                @if (ViewData["ErrorMessage"] != null)
+                {
+                    <div class="text-danger">
+                        @ViewData["ErrorMessage"]
+                    </div>
+                }
+				</div>        
             <div class="form-group">
 
                 <label asp-for="Customer.Email" class=""></label>

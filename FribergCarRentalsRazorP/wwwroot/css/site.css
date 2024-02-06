@@ -21,21 +21,24 @@ body {
   margin-bottom: 60px;
 }*/
 body {
-    margin:0;
-    background-color: #f3f3f3;
+
+    margin: 0;
+    background-color: #E3EBEE;
     font-family: Verdana;
     font-size: small;
 }
 
 header {
-    text-align: center;
+    text-align:center;
     width: auto;
     background-color: #E3EBEE;
     padding: 1vmax;
 }
-
+main {
+    background-color: #f3f3f3;
+}
 nav {
-  width: auto;
+
   text-align: center;
   background-color: transparent;
   border: transparent;

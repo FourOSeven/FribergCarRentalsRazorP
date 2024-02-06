@@ -13,6 +13,9 @@
 <table class="table">
     <thead>
         <tr>
+			<th>
+				@Html.DisplayNameFor(model => model.Vehicles.ElementAt(0).VehiclePicture)
+			</th>
             <th>
                 @Html.DisplayNameFor(model => model.Vehicles.ElementAt(0).Make)
             </th>
@@ -25,9 +28,6 @@
             <th>
                 @Html.DisplayNameFor(model => model.Vehicles.ElementAt(0).Price)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Vehicles.ElementAt(0).VehiclePicture)
-            </th>
             <th></th>
         </tr>
     </thead>
@@ -35,6 +35,9 @@
         @foreach (var item in Model.Vehicles)
         {
             <tr>
+				<td>
+					@Html.DisplayFor(modelItem => item.VehiclePicture)
+				</td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Make)
                 </td>
@@ -46,10 +49,7 @@
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Price)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.VehiclePicture)
-                </td>
+                </td>         
                 <td>
                     <a asp-page="./Create" asp-route-vehicleId="@item.Id">Book</a> |
                     <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |

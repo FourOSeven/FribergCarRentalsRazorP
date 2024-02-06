@@ -34,11 +34,16 @@ namespace FribergCarRentalsRazorP.Pages.Bookings
             {
                 var customer =  customerRepository.GetById(adminCustomerId);
                 Booking = CustomerDataInsert(customer, vehicle);
-            }
-            else
+            }        
+            else if (customerId != null)
             {
                 var customer = customerRepository.GetById(customerId);
                 Booking = CustomerDataInsert(customer, vehicle);
+            }
+            else
+            {
+                TempData["NotLoggedIn"] = " You need to be logged in to book a vehilce.";
+                return RedirectToPage("/Customers/Login");
             }
             return Page();
         }

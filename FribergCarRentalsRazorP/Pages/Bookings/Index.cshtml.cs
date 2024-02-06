@@ -26,9 +26,8 @@ namespace FribergCarRentalsRazorP.Pages.Bookings
         {
             var customer = HttpContext.Session.GetInt32("CustomerId");
             if (customer == null)
-            {
+            { 
                 Bookings = bookingRepository.GetAll();
-
             }
             else
             {

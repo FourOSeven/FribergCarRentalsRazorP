@@ -27,7 +27,9 @@ namespace FribergCarRentalsRazorP.Pages.Customers
 
         public IActionResult OnGet()
         {
-            return Page();
+            ViewData["NotLoggedIn"] = TempData["NotLoggedIn"];
+
+			return Page();
         }
 
         // To protect from overposting attacks, enable the specific properties you want to bind to.
@@ -42,8 +44,9 @@ namespace FribergCarRentalsRazorP.Pages.Customers
                 HttpContext.Session.SetInt32("CustomerId", customerFound.Id);
                 return RedirectToPage("./Home");
             }
-            ViewData["ErrorMessage"] = "Failed to login. Please check your email and/or password";
-            return Page();       
+			ViewData["ErrorMessage"] = "Failed to login. Please check your email and/or password.";
+            return Page();
+            
         }
     }
 }
