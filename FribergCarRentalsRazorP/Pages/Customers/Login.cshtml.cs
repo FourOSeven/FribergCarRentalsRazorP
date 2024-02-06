@@ -37,12 +37,12 @@ namespace FribergCarRentalsRazorP.Pages.Customers
             Customers = customerRepository.GetAll();
             
             var customerFound = Customers.FirstOrDefault(c => c.Email == customer.Email && c.Password == customer.Password);
-            if (customerFound != null) 
+            if (customerFound != null)
             {
-                HttpContext.Session.SetInt32("CustomerId",customerFound.Id);
+                HttpContext.Session.SetInt32("CustomerId", customerFound.Id);
                 return RedirectToPage("./Home");
             }
-            return Page();
+                return Page();       
         }
     }
 }
