@@ -40,6 +40,7 @@ namespace FribergCarRentalsRazorP.Pages.Admins
             {   
                 return RedirectToPage("./Home");
             }
+            ViewData["ErrorMessage"] = "Failed to login. Please check your email and/or password";
             return Page();
         }
     }

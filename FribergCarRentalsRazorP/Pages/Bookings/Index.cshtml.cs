@@ -32,8 +32,7 @@ namespace FribergCarRentalsRazorP.Pages.Bookings
             }
             else
             {
-                Bookings = bookingRepository.GetAll().Where(b => b.Customer.Id == customer);
-                
+                Bookings = bookingRepository.GetAll().Where(b => b.Customer.Id == customer);             
             }
         }
     }

@@ -11,6 +11,5 @@ namespace FribergCarRentalsRazorP.Data
         public DateTime BookingEnd { get; set; }
         public Customer Customer { get; set; }
         public Vehicle Vehicle { get; set; }
-        public bool IsDeleted { get; set; } = false;
     }
 }

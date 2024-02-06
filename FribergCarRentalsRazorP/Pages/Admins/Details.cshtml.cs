@@ -23,7 +23,7 @@ namespace FribergCarRentalsRazorP.Pages.Admins
 
         public IActionResult OnGet(int id)
         {
-            var admin = adminRepository.GetById(id);//_context.Admins.FirstOrDefaultAsync(m => m.Id == id);
+            var admin = adminRepository.GetById(id);
             if (admin == null)
             {
                 return NotFound();

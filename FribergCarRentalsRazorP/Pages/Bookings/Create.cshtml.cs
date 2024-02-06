@@ -28,8 +28,7 @@ namespace FribergCarRentalsRazorP.Pages.Bookings
         public IActionResult OnGet(int vehicleId)
         {
             var vehicle = vehicleRepository.GetById(vehicleId);
-            //var vehicle = Vehicles.FirstOrDefault(v=>v.Id == vehicleId);
-            var customerId = HttpContext.Session.GetInt32("CustomerId");
+            var customerId = HttpContext.Session.GetInt32("CustomerId");           
             var adminCustomerId = HttpContext.Session.GetInt32("AdminCustomerId");
             if (adminCustomerId != null)
             {

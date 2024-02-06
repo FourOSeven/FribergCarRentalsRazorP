@@ -42,7 +42,8 @@ namespace FribergCarRentalsRazorP.Pages.Customers
                 HttpContext.Session.SetInt32("CustomerId", customerFound.Id);
                 return RedirectToPage("./Home");
             }
-                return Page();       
+            ViewData["ErrorMessage"] = "Failed to login. Please check your email and/or password";
+            return Page();       
         }
     }
 }

@@ -26,7 +26,7 @@ namespace FribergCarRentalsRazorP.Pages.Admins
 
         public IActionResult OnGet(int id)
         {
-            var admin = adminRepository.GetById(id);//await _context.Admins.FirstOrDefaultAsync(m => m.Id == id);
+            var admin = adminRepository.GetById(id);
             if (admin == null)
             {
                 return NotFound();
@@ -44,30 +44,7 @@ namespace FribergCarRentalsRazorP.Pages.Admins
                 return Page();
             }
             adminRepository.Update(Admin);
-            //_context.Attach(Admin).State = EntityState.Modified;  Lägga detta i respo?
-
-            //try
-            //{
-            //    await _context.SaveChangesAsync();
-            //}
-            //catch (DbUpdateConcurrencyException)
-            //{
-            //    if (!AdminExists(Admin.Id))
-            //    {
-            //        return NotFound();
-            //    }
-            //    else
-            //    {
-            //        throw;
-            //    }
-            //}
-
             return RedirectToPage("./Index");
         }
-
-        //private bool AdminExists(int id)
-        //{
-        //    return adminRepository.GetById(id);//_context.Admins.Any(e => e.Id == id);
-        //}
     }
 }
