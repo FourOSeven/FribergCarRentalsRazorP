@@ -24,9 +24,9 @@ namespace FribergCarRentalsRazorP.Pages.Customers
         [BindProperty]
         public Customer Customer { get; set; } = default!;
 
-        public async Task<IActionResult> OnGetAsync(int id)
+        public IActionResult OnGet(int id)
         {
-            var customer = customerRepository.GetById(id);//await _context.Admins.FirstOrDefaultAsync(m => m.Id == id);
+            var customer = customerRepository.GetById(id);
             if (customer == null)
             {
                 return NotFound();
@@ -37,7 +37,7 @@ namespace FribergCarRentalsRazorP.Pages.Customers
 
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see https://aka.ms/RazorPagesCRUD.
-        public async Task<IActionResult> OnPostAsync()
+        public IActionResult OnPost()
         {
             if (!ModelState.IsValid)
             {

@@ -21,7 +21,7 @@ namespace FribergCarRentalsRazorP.Pages.Admins
         }
         public Admin Admin { get; set; } = default!;
 
-        public async Task<IActionResult> OnGetAsync(int id)
+        public IActionResult OnGet(int id)
         {
             var admin = adminRepository.GetById(id);//_context.Admins.FirstOrDefaultAsync(m => m.Id == id);
             if (admin == null)

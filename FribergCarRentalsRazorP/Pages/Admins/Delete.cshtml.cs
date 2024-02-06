@@ -23,7 +23,7 @@ namespace FribergCarRentalsRazorP.Pages.Admins
         [BindProperty]
         public Admin Admin { get; set; } = default!;
 
-        public async Task<IActionResult> OnGetAsync(int id)
+        public IActionResult OnGet(int id)
         {
             if (id == null)
             {
@@ -43,7 +43,7 @@ namespace FribergCarRentalsRazorP.Pages.Admins
             return Page();
         }
 
-        public async Task<IActionResult> OnPostAsync(Admin admin)
+        public IActionResult OnPost(Admin admin)
         {
             if (admin == null)
             {

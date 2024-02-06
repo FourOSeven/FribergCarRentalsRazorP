@@ -22,7 +22,7 @@ namespace FribergCarRentalsRazorP.Pages.Bookings
 
         public Booking Booking { get; set; } = default!;
 
-        public async Task<IActionResult> OnGetAsync(int id)
+        public IActionResult OnPost(int id)
         {
             var booking = bookingRepository.GetById(id);
             if (booking == null)

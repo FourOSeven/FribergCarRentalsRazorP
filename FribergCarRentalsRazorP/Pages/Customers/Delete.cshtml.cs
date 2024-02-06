@@ -23,7 +23,7 @@ namespace FribergCarRentalsRazorP.Pages.Customers
         [BindProperty]
         public Customer Customer { get; set; } = default!;
 
-        public async Task<IActionResult> OnGetAsync(int id)
+        public IActionResult OnGet(int id)
         {
             if (id == null)
             {
@@ -43,7 +43,7 @@ namespace FribergCarRentalsRazorP.Pages.Customers
             return Page();
         }
 
-        public async Task<IActionResult> OnPostAsync(Customer customer)
+        public IActionResult OnPost(Customer customer)
         {
             if (customer == null)
             {

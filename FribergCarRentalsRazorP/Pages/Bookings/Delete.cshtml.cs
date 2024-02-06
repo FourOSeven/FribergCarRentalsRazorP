@@ -23,7 +23,7 @@ namespace FribergCarRentalsRazorP.Pages.Bookings
         [BindProperty]
         public Booking Booking { get; set; } = default!;
 
-        public async Task<IActionResult> OnGetAsync(int id)
+        public IActionResult OnGet(int id)
         {
             if (id == null)
             {
@@ -43,7 +43,7 @@ namespace FribergCarRentalsRazorP.Pages.Bookings
             return Page();
         }
 
-        public async Task<IActionResult> OnPostAsync(Booking booking)
+        public IActionResult OnPost(Booking booking)
         {
             if (booking == null)
             {

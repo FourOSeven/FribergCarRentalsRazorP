@@ -21,7 +21,7 @@ namespace FribergCarRentalsRazorP.Pages.Customers
         }
         public IEnumerable<Customer> Customers { get; set; } = default!;
 
-        public async Task OnGetAsync()
+        public void OnGet()
         {
             Customers = customerRepository.GetAll();
         }

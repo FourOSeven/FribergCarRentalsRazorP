@@ -22,7 +22,7 @@ namespace FribergCarRentalsRazorP.Pages.Vehicles
 
         public IEnumerable<Vehicle> Vehicles { get; set; } = default!;
 
-        public async Task OnGetAsync()
+        public void OnGet()
         {
             Vehicles = vehicleRepository.GetAll();//await _context.Admins.ToListAsync();
         }

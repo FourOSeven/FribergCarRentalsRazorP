@@ -22,7 +22,7 @@ namespace FribergCarRentalsRazorP.Pages.Vehicles
 
         public Vehicle Vehicle { get; set; } = default!;
 
-        public async Task<IActionResult> OnGetAsync(int id)
+        public IActionResult OnGet(int id)
         {
             var vehicle = vehicleRepository.GetById(id);
             if (vehicle == null)

@@ -24,14 +24,14 @@ namespace FribergCarRentalsRazorP.Pages.Admins
         public Admin Admin { get; set; } = default!;
         public IEnumerable<Admin> Admins { get; set; } = default!;
 
-        public async Task<IActionResult> OnGetAsync()
+        public IActionResult OnGet()
         {
             return Page();
         }
 
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see https://aka.ms/RazorPagesCRUD.
-        public async Task<IActionResult> OnPostAsync(Admin admin)
+        public IActionResult OnPost(Admin admin)
         {
             Admins = adminRepository.GetAll();
 

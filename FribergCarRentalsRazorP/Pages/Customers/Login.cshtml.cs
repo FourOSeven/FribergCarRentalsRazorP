@@ -25,14 +25,14 @@ namespace FribergCarRentalsRazorP.Pages.Customers
         public Customer Customer { get; set; } = default!;
         public IEnumerable<Customer> Customers { get; set; } = default!;
 
-        public async Task<IActionResult> OnGetAsync()
+        public IActionResult OnGet()
         {
             return Page();
         }
 
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see https://aka.ms/RazorPagesCRUD.
-        public async Task<IActionResult> OnPostAsync(Customer customer)
+        public IActionResult OnPost(Customer customer)
         {
             Customers = customerRepository.GetAll();
             

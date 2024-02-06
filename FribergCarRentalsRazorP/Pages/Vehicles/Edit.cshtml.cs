@@ -25,7 +25,7 @@ namespace FribergCarRentalsRazorP.Pages.Vehicles
         [BindProperty]
         public Vehicle Vehicle { get; set; } = default!;
 
-        public async Task<IActionResult> OnGetAsync(int id)
+        public IActionResult OnGet(int id)
         {
             var vehicle = vehicleRepository.GetById(id);//await _context.Admins.FirstOrDefaultAsync(m => m.Id == id);
             if (vehicle == null)
@@ -38,7 +38,7 @@ namespace FribergCarRentalsRazorP.Pages.Vehicles
 
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see https://aka.ms/RazorPagesCRUD.
-        public async Task<IActionResult> OnPostAsync()
+        public IActionResult OnPost()
         {
             if (!ModelState.IsValid)
             {

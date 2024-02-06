@@ -23,7 +23,7 @@ namespace FribergCarRentalsRazorP.Pages.Vehicles
         [BindProperty]
         public Vehicle Vehicle { get; set; } = default!;
 
-        public async Task<IActionResult> OnGetAsync(int id)
+        public IActionResult OnGet(int id)
         {
             if (id == null)
             {
@@ -43,7 +43,7 @@ namespace FribergCarRentalsRazorP.Pages.Vehicles
             return Page();
         }
 
-        public async Task<IActionResult> OnPostAsync(Vehicle vehicle)
+        public IActionResult OnPost(Vehicle vehicle)
         {
             if (vehicle == null)
             {

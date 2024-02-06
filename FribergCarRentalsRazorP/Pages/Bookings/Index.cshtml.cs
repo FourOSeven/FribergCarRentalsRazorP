@@ -22,7 +22,7 @@ namespace FribergCarRentalsRazorP.Pages.Bookings
 
         public IEnumerable<Booking> Bookings { get; set; } = default!;
 
-        public async Task OnGetAsync()
+        public void OnGet()
         {
             var customer = HttpContext.Session.GetInt32("CustomerId");
             if (customer == null)

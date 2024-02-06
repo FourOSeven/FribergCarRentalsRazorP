@@ -27,7 +27,7 @@ namespace FribergCarRentalsRazorP.Pages.Customers
         public Customer Customer { get; set; } = default!;
 
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
-        public async Task<IActionResult> OnPostAsync()
+        public IActionResult OnPost()
         {
             try
             {

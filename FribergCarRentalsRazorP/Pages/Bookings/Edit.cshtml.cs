@@ -25,7 +25,7 @@ namespace FribergCarRentalsRazorP.Pages.Bookings
         [BindProperty]
         public Booking Booking { get; set; } = default!;
 
-        public async Task<IActionResult> OnGetAsync(int id)
+        public IActionResult OnGet(int id)
         {
             var booking = bookingRepository.GetById(id);
             if (booking == null)
@@ -38,7 +38,7 @@ namespace FribergCarRentalsRazorP.Pages.Bookings
 
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see https://aka.ms/RazorPagesCRUD.
-        public async Task<IActionResult> OnPostAsync()
+        public IActionResult OnPost()
         {
             if (!ModelState.IsValid)
             {

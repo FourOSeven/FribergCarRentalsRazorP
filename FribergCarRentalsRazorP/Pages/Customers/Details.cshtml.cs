@@ -22,9 +22,9 @@ namespace FribergCarRentalsRazorP.Pages.Customers
 
         public Customer Customer { get; set; } = default!;
 
-        public async Task<IActionResult> OnGetAsync(int id)
+        public IActionResult OnGet(int id)
         {
-            var customer = customerRepository.GetById(id);//_context.Admins.FirstOrDefaultAsync(m => m.Id == id);
+            var customer = customerRepository.GetById(id);
             if (customer == null)
             {
                 return NotFound();

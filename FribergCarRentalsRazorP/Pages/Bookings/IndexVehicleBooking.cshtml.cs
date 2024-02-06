@@ -21,7 +21,7 @@ namespace FribergCarRentalsRazorP.Pages.Bookings
 
         public IEnumerable<Vehicle> Vehicles { get; set; } = default!;
 
-        public async Task OnGetAsync(int? id)
+        public void OnGet(int? id)
         {
             if (id != null)
             {

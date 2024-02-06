@@ -21,7 +21,7 @@ namespace FribergCarRentalsRazorP.Pages.Admins
         }
         public IEnumerable<Admin> Admins { get; set; } = default!;
 
-        public async Task OnGetAsync()
+        public void OnGet()
         {
             Admins = adminRepository.GetAll();
         }
