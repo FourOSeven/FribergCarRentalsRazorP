@@ -3,8 +3,10 @@
 @{
     ViewData["Title"] = "Home page";
 }
-
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<nav>
+    <a class="btn btn--standard" asp-page="/Customers/Login">Customer Login</a>
+    <a class="btn btn--standard" asp-page="/Admins/Index">Admin Login</a>
+</nav>
+<section>
+    <h1>Welcome to Friberg car rentals</h1>
+</section>

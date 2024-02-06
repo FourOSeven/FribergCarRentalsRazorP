@@ -1,4 +1,4 @@
-html {
+/*html {
   font-size: 14px;
 }
 
@@ -19,4 +19,237 @@ html {
 
 body {
   margin-bottom: 60px;
+}*/
+body {
+    margin:0;
+    background-color: #f3f3f3;
+    font-family: Verdana;
+    font-size: small;
+}
+
+header {
+    text-align: center;
+    width: auto;
+    background-color: #E3EBEE;
+    padding: 1vmax;
+}
+
+nav {
+  width: auto;
+  text-align: center;
+  background-color: transparent;
+  border: transparent;
+  border-radius: 1vmax;
+  margin: 1vmax;
+  padding: 1vmax;
+}
+
+section {
+  width: 70%;
+  text-align: center;
+/*  background-color: rgba(243, 243, 243, 0.6);
+  backdrop-filter: blur(3px);
+  border-radius: 0.3vmax;*/
+  margin: auto;
+  padding: 1vmax;
+
+}
+.loggo{
+    witdh: 5vmax;
+}
+.wp--color-yellow {
+    background-color: #FEC544;
+    color: black;
+    border: 0.1vmax solid #9E9E9E;
+    border-radius: 1vmax
+}
+.wp--color-brown {
+  background-color: #715F4B;
+  color: #f3f3f3;
+  border: 0.1vmax solid #9E9E9E;
+  border-radius: 1vmax;
+}
+
+.wp--color-dark-grey {
+  background-color: #f3f3f3;
+  color: black;
+  border: 0.1vmax solid black;
+  border-radius: 1vmax;
+}
+
+.wp--color-black {
+  background-color: black;
+  color: #f3f3f3;
+  border: 0.1vmax solid #9E9E9E;
+  border-radius: 1vmax;
+}
+
+.wp--color-light-grey {
+  background-color: #f3f3f3;
+  color: black;
+  border: 0.1vmax solid #9E9E9E;
+  border-radius: 1vmax;
+}
+
+.wp--color-green {
+  background-color: #55FF94;
+  color: black;
+  border: 0.1vmax solid #9E9E9E;
+  border-radius: 1vmax;
+}
+
+.wp--color-red {
+    background-color: #FE4D49;
+    color: black;
+    border: 0.1vmax solid #9E9E9E;
+    border-radius: 1vmax;
+}
+
+h1 {
+  font-family: Georgia;
+  font-size: xx-large;
+}
+
+h2 {
+  font-size: large;
+}
+
+h3 {
+  font-size: medium;
+}
+
+h4 {
+  font-size: small;
+}
+.text-danger {
+    color: #FE4D49;
+}
+a:link{
+    text-decoration:none;
+}
+.btn {
+  padding: 0.2vmax;
+  border-radius: 0.2vmax;
+  font-size: 1em;
+  font-family:verdana;
+  margin: 0.3vmax;
+  transition-duration: 0.4s;
+}
+
+.btn--standard {
+    background-color: #E3EBEE;
+    color: black;
+    border: 0.1vmax solid #9E9E9E;
+}
+
+.btn--standard:hover {
+    background-color: #f3f3f3;
+    color: black;
+}
+
+.btn--function {
+  background-color: #f3f3f3;
+  color: black;
+  border: 0.1vmax solid #9E9E9E;
+}
+
+.btn--function:hover {
+  background-color: #715F4B;
+  color: #f3f3f3;
+}
+
+.btn--positiv {
+    background-color: #37FF5B;
+    color: black;
+    border: 0.1vmax solid #9E9E9E;
+}
+
+.btn--positiv:hover {
+    background-color: #4DFF61;
+    color: black;
+}
+
+.btn--negativ {
+    background-color: #FE4D49;
+    color: black;
+    border: 0.1vmax solid #9E9E9E;
+}
+
+    .btn--negativ:hover {
+        background-color: #FF6969;
+    }
+
+.table {
+  overflow-x: auto;
+}
+
+tr {
+  border: 1vmax solid #9E9E9E;
+  text-align: left;
+}
+
+tr:nth-child(odd) {
+  background-color: #9E9E9E;
+}
+
+th {
+  background-color: #EFD99F
+}
+
+ul {
+  text-align: left;
+}
+
+ol {
+  text-align: left;
+}
+
+.linear-loader-container {
+  width: 30%;
+  height: 1vmax;
+  background-color: #f3f3f3;
+  border-radius: 1vmax;
+  margin: 1vmax;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.linear-loader {
+
+  height: 100%;
+  background-color: #EFD99F;
+  border-radius: 10px;
+  animation: fill 2s ease-in-out infinite;
+}
+
+@keyframes fill {
+  0% {
+      width: 0;
+  }
+
+  100% {
+      width: 100%;
+  }
+}
+
+.neutralpanel {
+  margin: auto;
+  margin-top: 0.5vmax;
+  margin-bottom: 0.5vmax;
+}
+
+.positivepanel {
+  margin: auto;
+  margin-top: 0.5vmax;
+  margin-bottom: 0.5vmax;
+}
+
+.negativepanel {
+  margin: auto;
+  margin-top: 0.5vmax;
+  margin-bottom: 0.5vmax;
+}
+
+input[type=text] {
+  border-radius: 0.4vmax;
 }
