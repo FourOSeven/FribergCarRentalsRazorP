@@ -4,76 +4,82 @@
 @{
     ViewData["Title"] = "Details";
 }
+<nav></nav>
+<main>
+    <section>
+<h1>Booking details</h1>
+	</section>
+<table>
+    <tr>
+        <th>
+			@Html.DisplayNameFor(model => model.Booking.Id)
+        </th>
+		<th>
+                @Html.DisplayNameFor(model => model.Booking.BookingStart)
+		</th>
+        <th>
+				@Html.DisplayNameFor(model => model.Booking.BookingEnd)
+        </th>
+        <th>
+				@Html.DisplayNameFor(model => model.Booking.Customer.FirstName)
+        </th>
+        <th>
+				@Html.DisplayNameFor(model => model.Booking.Customer.LastName)
+        </th>
+        <th>
+				@Html.DisplayNameFor(model => model.Booking.Customer.Email)
+        </th>
+        <th>
+				@Html.DisplayNameFor(model => model.Booking.Vehicle.Make)
+        </th>
+        <th>
+				@Html.DisplayNameFor(model => model.Booking.Vehicle.Model)
+        </th>
+        <th>
+				@Html.DisplayNameFor(model => model.Booking.Vehicle.ModelYear)
+        </th>
+        <th>
+				@Html.DisplayNameFor(model => model.Booking.Vehicle.Price)
+        </th>
+    </tr>
+    <tr>
+        <td>
+				@Html.DisplayFor(model => model.Booking.Id)
+        </td>
+        <td>
+				@Html.DisplayFor(model => model.Booking.BookingStart)
+        </td>
+        <td>
+				@Html.DisplayFor(model => model.Booking.BookingEnd)
+        </td>
+        <td>
+				@Html.DisplayFor(model => model.Booking.Customer.FirstName)
+        </td>
+        <td>
+				@Html.DisplayFor(model => model.Booking.Customer.LastName)
+        </td>
+		<td>
+				@Html.DisplayFor(model => model.Booking.Customer.Email)
 
-<h1>Details</h1>
-
-<div>
-    <h4>Booking</h4>
-    <hr />
-    <dl class="row">
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Booking.Id)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Booking.Id)
-            </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Booking.BookingStart)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Booking.BookingStart)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Booking.BookingEnd)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Booking.BookingEnd)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Booking.Customer.FirstName)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Booking.Customer.FirstName)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Booking.Customer.LastName)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Booking.Customer.LastName)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Booking.Customer.Email)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Booking.Customer.Email)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Booking.Vehicle.Make)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Booking.Vehicle.Make)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Booking.Vehicle.Model)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Booking.Vehicle.Model)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Booking.Vehicle.ModelYear)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Booking.Vehicle.ModelYear)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Booking.Vehicle.Price)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Booking.Vehicle.Price)
-        </dd>
-    </dl>
-</div>
-<div>
-    <a asp-page="./Edit" asp-route-id="@Model.Booking.Id">Edit date</a> |
-    <a asp-page="./Index">Back to List</a>
-</div>
+        </td>
+        <td>
+				@Html.DisplayFor(model => model.Booking.Vehicle.Make)
+        </td>
+        <td>
+				@Html.DisplayFor(model => model.Booking.Vehicle.Model)
+        </td>
+        <td>
+				@Html.DisplayFor(model => model.Booking.Vehicle.ModelYear)
+        </td>
+			<td>	
+				<p>@Html.DisplayFor(model => model.Booking.Vehicle.Price)Kr</p>
+        </td>
+    </tr>
+</table>
+    <section>
+        <div>
+            <a class="btn btn--standard box-shadow" asp-page="./Edit" asp-route-id="@Model.Booking.Id">Edit date</a>
+            <a class="btn btn--standard box-shadow" asp-page="./Index">Back to List</a>
+		</div>
+	</section>
+</main>

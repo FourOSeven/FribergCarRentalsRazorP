@@ -3,10 +3,12 @@
 @{
     ViewData["Title"] = "Home";
 }
-<p>
-    <a asp-page="/Bookings/Index">Bookings</a>
-    <a asp-page="/Vehicles/Index">Vehicles</a>
-    <a asp-page="/Customers/Index">Customers</a>
-    <a asp-page="./List">Admins</a>   
-    <a asp-page="./Logout">Logout</a>
-</p>
+<nav>
+    <a class ="btn btn--standard box-shadow" asp-page="/Bookings/Index">Bookings</a>
+    <a class="btn btn--standard box-shadow" asp-page="/Vehicles/Index">Vehicles</a>
+    <a class="btn btn--standard box-shadow" asp-page="/Customers/Index">Customers</a>
+    <a class="btn btn--standard box-shadow" asp-page="./List">Admins</a>
+    <a class="btn btn--negativ box-shadow" asp-page="./Logout">Logout</a>
+</nav>
+<main>
+</main>

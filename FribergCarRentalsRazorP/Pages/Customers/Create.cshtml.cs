@@ -35,7 +35,7 @@ namespace FribergCarRentalsRazorP.Pages.Customers
                 {
                     customerRepository.Add(Customer);
                 }
-                return RedirectToPage("./Index");
+                return RedirectToPage("./Home");
             }
             catch
             {

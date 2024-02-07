@@ -3,8 +3,10 @@
 @{
     ViewData["Title"] = "Home";
 }
-<p>
-    <a asp-page="/Bookings/Index">Bookings</a>
-    <a asp-page="/Bookings/IndexVehicleBooking">Vehicles</a>
-    <a asp-page="./Logout">Logout</a>
-</p>
+<nav>
+	<a class="btn btn--standard box-shadow" asp-page="/Bookings/Index">Bookings</a>
+	<a class="btn btn--standard box-shadow" asp-page="/Bookings/IndexVehicleBooking">Vehicles</a>
+	<a class="btn btn--negativ box-shadow" asp-page="./Logout">Logout</a>
+</nav>
+<main>
+</main>

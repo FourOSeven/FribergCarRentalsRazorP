@@ -4,70 +4,50 @@
 @{
     ViewData["Title"] = "Edit";
 }
-
-<h1>Edit</h1>
-
-<h4>Booking</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
+<nav></nav>
+<main>
+    <section>
+        <h1>Edit dates for booking</h1>
+	</section>
+    <section>
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Booking.Id" />
-            <div class="form-group">
-                <label asp-for="Booking.BookingStart" class="control-label"></label>
-                <input asp-for="Booking.BookingStart" class="form-control" />
-                <span asp-validation-for="Booking.BookingStart" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Booking.BookingEnd" class="control-label"></label>
-                <input asp-for="Booking.BookingEnd" class="form-control" />
-                <span asp-validation-for="Booking.BookingEnd" class="text-danger"></span>
-            </div>
-            <div class="form-group">
+            <div class="container">
+                <div class="form-group container--column">
+				    <label asp-for="Booking.BookingStart" class="control-label">Booking starts</label>
+                    <br />
+                    <label asp-for="Booking.BookingEnd" class="control-label">Booking ends</label>
+					
+				</div>
+                <div class="form-group container--column">               
+                    <input asp-for="Booking.BookingStart" class="form-control" />
+                    <span asp-validation-for="Booking.BookingStart" class="text-danger"></span>
+                    <br />
+				    <input asp-for="Booking.BookingEnd" class="form-control" />
+				    <span asp-validation-for="Booking.BookingEnd" class="text-danger"></span>
+				</div>
+			</div>
+            <div class="form-group">              
                 <input type="hidden" asp-for="Booking.Customer.Id" class="form-control" />
-            </div>
-            <div class="form-group">
                 <input type="hidden" asp-for="Booking.Customer.FirstName" class="form-control" />
-            </div>
-            <div class="form-group">
                 <input type="hidden" asp-for="Booking.Customer.LastName" class="form-control" />
-            </div>
-            <div class="form-group">
                 <input type="hidden" asp-for="Booking.Customer.Email" class="form-control" />
-            </div>
-            <div class="form-group">
                 <input type="hidden" asp-for="Booking.Customer.Password" class="form-control" />
-            </div>
-            <div class="form-group">
                 <input type="hidden" asp-for="Booking.Vehicle.Id" class="form-control" />
-            </div>
-            <div class="form-group">
                 <input type="hidden" asp-for="Booking.Vehicle.Make" class="form-control" />
-            </div>
-            <div class="form-group">
                 <input type="hidden" asp-for="Booking.Vehicle.Model" class="form-control" />
-            </div>
-            <div class="form-group">
                 <input type="hidden" asp-for="Booking.Vehicle.ModelYear" class="form-control" />
-            </div>
-            <div class="form-group">
                 <input type="hidden" asp-for="Booking.Vehicle.Price" class="form-control" />
-            </div>
-            <div class="form-group">
                 <input type="hidden" asp-for="Booking.Vehicle.VehiclePicture" class="form-control" />
             </div>
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+					<input class="btn btn--positiv box-shadow" type="submit" value="Save" />
+				<a class="btn btn--standard box-shadow" asp-page="./Index">Back to List</a>
             </div>
         </form>
-    </div>
-</div>
-
-<div>
-    <a asp-page="./Index">Back to List</a>
-</div>
-
+    </section>
+</main>
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }

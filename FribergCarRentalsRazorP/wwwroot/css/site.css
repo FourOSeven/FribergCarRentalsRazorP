@@ -21,44 +21,79 @@ body {
   margin-bottom: 60px;
 }*/
 body {
-
-    margin: 0;
+    display:flex;
+    height:100%;
+    flex-direction:column;
+    /*margin: 0;*/
     background-color: #E3EBEE;
     font-family: Verdana;
     font-size: small;
+    padding:1vmax;
+}
+.box-shadow {
+    border-radius:0.5vmax;
+    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .25);
+}
+.loggo {
+    width: 10vmax;
 }
 
 header {
-    text-align:center;
+    display: flex;
+    justify-content: center;
     width: auto;
-    background-color: #E3EBEE;
     padding: 1vmax;
+    background-color: #E3EBEE;
+    
 }
 main {
+    display:flex;
+    justify-content:center;
+    flex-direction:column;
+    padding:1vmax;
+    margin-top:0;
+    border-bottom-left-radius:0.5vmax;
+    border-bottom-right-radius:0.5vmax;
     background-color: #f3f3f3;
 }
-nav {
+nav{
 
-  text-align: center;
-  background-color: transparent;
-  border: transparent;
-  border-radius: 1vmax;
-  margin: 1vmax;
-  padding: 1vmax;
+    display: flex;
+    justify-content: center;
+    background-color: #f3f3f3;
+    border: transparent;
+    border-top-right-radius: 0.5vmax;
+    border-top-left-radius: 0.5Vmax;
+    /*Får se om den här margin bråkar med ul i andra delar av koden*/
+    margin-top:0;
+    margin-bottom: 0;
+    padding:1vmax;
 }
-
 section {
-  width: 70%;
-  text-align: center;
-/*  background-color: rgba(243, 243, 243, 0.6);
-  backdrop-filter: blur(3px);
-  border-radius: 0.3vmax;*/
-  margin: auto;
-  padding: 1vmax;
+    display:flex;
+    flex-direction:column;
+    background-color: #f3f3f3;
+    text-align: center;
+    border-radius: 0.5vmax;
 
+}
+.container{
+    display:flex;
+    justify-content:center;
+    
+}
+.container--column {
+    display:flex; 
+    flex-direction:column; 
+    justify-content:space-around; 
+    margin:0.3vmax;
+}
+label{
+    text-align:left;
 }
 .loggo{
-    witdh: 5vmax;
+    justify-content:center;
+    width: 14vmax;   
 }
 .wp--color-yellow {
     background-color: #FEC544;
@@ -74,7 +109,7 @@ section {
 }
 
 .wp--color-dark-grey {
-  background-color: #f3f3f3;
+  background-color: #C2C2C2;
   color: black;
   border: 0.1vmax solid black;
   border-radius: 1vmax;
@@ -142,7 +177,7 @@ a:link{
 .btn--standard {
     background-color: #E3EBEE;
     color: black;
-    border: 0.1vmax solid #9E9E9E;
+   /* border: 0.1vmax solid #9E9E9E;*/
 }
 
 .btn--standard:hover {
@@ -153,7 +188,7 @@ a:link{
 .btn--function {
   background-color: #f3f3f3;
   color: black;
-  border: 0.1vmax solid #9E9E9E;
+  /*border: 0.1vmax solid #9E9E9E;*/
 }
 
 .btn--function:hover {
@@ -162,9 +197,9 @@ a:link{
 }
 
 .btn--positiv {
-    background-color: #37FF5B;
+    background-color: #82FF9F;
     color: black;
-    border: 0.1vmax solid #9E9E9E;
+    /*border: 0.1vmax solid #9E9E9E;*/
 }
 
 .btn--positiv:hover {
@@ -173,86 +208,56 @@ a:link{
 }
 
 .btn--negativ {
-    background-color: #FE4D49;
+    background-color: #FE8080 ;
     color: black;
-    border: 0.1vmax solid #9E9E9E;
+    /*border: 0.1vmax solid #9E9E9E;*/
 }
 
     .btn--negativ:hover {
-        background-color: #FF6969;
+        background-color: #FE4D49;
     }
 
-.table {
-  overflow-x: auto;
+/*input[type="submit"]{
+    padding-block:0;
+    border-width:0;
+    padding-inline:0;
+    box-sizing:0;
+    border-color:transparent;
+}*/
+table{
+    display:flex;
+    justify-content:center;  
+    overflow-x: auto;
+    margin-bottom:0.8vmax;
 }
 
 tr {
-  border: 1vmax solid #9E9E9E;
-  text-align: left;
+    border: 1vmax solid #EDEDED;
+    text-align: left;
 }
 
 tr:nth-child(odd) {
-  background-color: #9E9E9E;
+    background-color: #EDEDED;
 }
 
 th {
-  background-color: #EFD99F
+    padding:0.5vmax;
+    background-color: #E3EBEE;
 }
-
+td{
+    padding:0.5vmax;
+    text-align:left;
+}
 ul {
+    display:flex;
+    justify-content:center;
   text-align: left;
 }
 
 ol {
   text-align: left;
 }
-
-.linear-loader-container {
-  width: 30%;
-  height: 1vmax;
-  background-color: #f3f3f3;
-  border-radius: 1vmax;
-  margin: 1vmax;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.linear-loader {
-
-  height: 100%;
-  background-color: #EFD99F;
-  border-radius: 10px;
-  animation: fill 2s ease-in-out infinite;
-}
-
-@keyframes fill {
-  0% {
-      width: 0;
-  }
-
-  100% {
-      width: 100%;
-  }
-}
-
-.neutralpanel {
-  margin: auto;
-  margin-top: 0.5vmax;
-  margin-bottom: 0.5vmax;
-}
-
-.positivepanel {
-  margin: auto;
-  margin-top: 0.5vmax;
-  margin-bottom: 0.5vmax;
-}
-
-.negativepanel {
-  margin: auto;
-  margin-top: 0.5vmax;
-  margin-bottom: 0.5vmax;
-}
-
-input[type=text] {
-  border-radius: 0.4vmax;
+li{
+    display:flex;
+    justify-content:center;
 }

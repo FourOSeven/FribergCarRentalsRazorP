@@ -3,15 +3,20 @@
 @{
     ViewData["Title"] = "Logout";
 }
-
-<h1>Logout</h1>
-
-<h4>Customer</h4>
-<hr />
-<div class="row">
-    <h2>Do you wish to logout?</h2>
-    <form method="post">
-        <input type="submit" value="Yes" class="btn btn-danger" />
-    </form>
-    <a href="./Home" class="btn btn-primary">No</a>
-</div>
+<nav></nav>
+<main>
+    <section>
+        <h1>Logout</h1>
+    </section>
+    <section>
+        <div class="container--column">
+            <h2>Do you wish to logout?</h2>
+            <div class="container">
+                <form method="post">
+                    <input class="btn btn--positiv box-shadow" type="submit" value="Yes" />
+                </form>
+                <a class="btn btn--negativ box-shadow" href="./Home">No</a>
+            </div>
+        </div>
+    </section>
+</main>

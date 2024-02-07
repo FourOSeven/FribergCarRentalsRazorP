@@ -4,14 +4,12 @@
 @{
     ViewData["Title"] = "List";
 }
-
-<h1>Admin list</h1>
-
-<p>
-    <a asp-page="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
+<nav></nav>
+<main>
+    <section>
+        <h1>Admin list</h1>
+    </section>
+    <table>
         <tr>
             <th>
                 @Html.DisplayNameFor(model => model.Admins.ElementAt(0).FirstName)
@@ -24,8 +22,6 @@
             </th>
             <th></th>
         </tr>
-    </thead>
-    <tbody>
         @foreach (var item in Model.Admins)
         {
             <tr>
@@ -39,12 +35,16 @@
                     @Html.DisplayFor(modelItem => item.Email)
                 </td>
                 <td>
-                    <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
-                    <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
-                    <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+                    <a class="btn btn--standard box-shadow" asp-page="./Edit" asp-route-id="@item.Id">Edit</a>
+                    <a class ="btn btn--standard box-shadow" asp-page="./Details" asp-route-id="@item.Id">Details</a>
+                    <a class="btn btn--negativ box-shadow" asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
                 </td>
             </tr>
         }
-    </tbody>
-</table>
+    </table>
+    <div class="container">
+        <a class="btn btn--positiv box-shadow" asp-page="./Create">Create new Admin</a>
+        <a class="btn btn--standard box-shadow" asp-page="./home">Home</a>
+    </div>
+</main>
 

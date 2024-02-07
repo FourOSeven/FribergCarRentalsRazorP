@@ -9,12 +9,10 @@
 </head>
 <body>
 	<header>
-		<a asp-page="./Index"><img src="/css/loggo.jpg" class="loggo" /></a>
+		<a asp-page="/Index"><img src="/css/loggo.jpg" class="loggo" /></a>
     </header>
-    <div class="container">
-        <main role="main">
+    <div class="box-shadow">  
             @RenderBody()
-        </main>
     </div>
 
     <footer class="border-top footer text-muted">

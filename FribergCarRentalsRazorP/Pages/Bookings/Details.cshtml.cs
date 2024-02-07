@@ -22,7 +22,7 @@ namespace FribergCarRentalsRazorP.Pages.Bookings
 
         public Booking Booking { get; set; } = default!;
 
-        public IActionResult OnPost(int id)
+        public IActionResult OnGet(int id)
         {
             var booking = bookingRepository.GetById(id);
             if (booking == null)

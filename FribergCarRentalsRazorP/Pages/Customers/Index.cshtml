@@ -4,14 +4,13 @@
 @{
     ViewData["Title"] = "Index";
 }
+<nav></nav>
+<main>
+    <section>
+        <h1>Customer list</h1>
 
-<h1>Index</h1>
-
-<p>
-    <a asp-page="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
+    </section>
+    <table>
         <tr>
             <th>
                 @Html.DisplayNameFor(model => model.Customers.ElementAt(0).FirstName)
@@ -27,29 +26,30 @@
             </th>
             <th></th>
         </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model.Customers) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.FirstName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.LastName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Email)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Password)
-            </td>
-            <td>   
-                <a asp-page="/Bookings/IndexVehicleBooking" asp-route-Id="@item.Id">New Booking</a> |
-                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+        @foreach (var item in Model.Customers) {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Password)
+                </td>
+                <td>   
+                    <a class="btn btn--positiv box-shadow" asp-page="/Bookings/IndexVehicleBooking" asp-route-Id="@item.Id">New Booking</a>
+                    <a class="btn btn--standard box-shadow" asp-page="./Edit" asp-route-id="@item.Id">Edit</a>
+                    <a class="btn btn--standard box-shadow" asp-page="./Details" asp-route-id="@item.Id">Details</a>
+                    <a class="btn btn--negativ box-shadow" asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </table>
+    <div class="container">
+        <a class="btn btn--positiv box-shadow" asp-page="Create">Create New</a>
+    </div>
+</main>

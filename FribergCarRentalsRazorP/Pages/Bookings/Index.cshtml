@@ -4,11 +4,13 @@
 @{
     ViewData["Title"] = "Index";
 }
-
-<h1>Active bookings</h1>
+<nav></nav>
+<main>
+    <section>
+		<h1>Active bookings</h1>
+	</section>
 
 <table class="table">
-    <thead>
         <tr>
             <th>
                 @Html.DisplayNameFor(model => model.Bookings.ElementAt(0).Id)
@@ -33,8 +35,6 @@
             </th>
             <th></th>
         </tr>
-    </thead>
-    <tbody>
 @foreach (var item in Model.Bookings.Where(i=>i.BookingStart > DateTime.Now)) {
         <tr>
             <td>
@@ -59,20 +59,19 @@
                 @Html.DisplayFor(modelItem => item.Vehicle.ModelYear)
             </td>
             <td>
-                <a asp-page="./Edit" asp-route-id="@item.Id">Edit date</a> |
-                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+                <a class="btn btn--standard box-shadow" asp-page="./Edit" asp-route-id="@item.Id">Edit date</a> 
+                <a class="btn btn--standard box-shadow" asp-page="./Details" asp-route-id="@item.Id">Details</a> 
+                <a class="btn btn--negativ box-shadow" asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
             </td>
         </tr>
 }
-    </tbody>
 </table>
-
+<section>
 <h1>
     Booking history
-</h1>
+		</h1>
+</section>
 <table class="table">
-    <thead>
         <tr>
             <th>
                 @Html.DisplayNameFor(model => model.Bookings.ElementAt(0).Id)
@@ -97,8 +96,6 @@
             </th>
             <th></th>
         </tr>
-    </thead>
-    <tbody>
         @foreach (var item in Model.Bookings.Where(i => i.BookingEnd < DateTime.Now))
         {
             <tr>
@@ -124,10 +121,9 @@
                     @Html.DisplayFor(modelItem => item.Vehicle.ModelYear)
                 </td>
                 <td>
-                    <a asp-page="./Details" asp-route-id="@item.Id">Details</a> 
+                    <a class="btn btn--standard box-shadow" asp-page="./Details" asp-route-id="@item.Id">Details</a>
                 </td>
             </tr>
         }
-    </tbody>
 </table>
-
+</main>

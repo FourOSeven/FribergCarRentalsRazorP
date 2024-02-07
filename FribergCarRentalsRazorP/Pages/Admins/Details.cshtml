@@ -4,40 +4,45 @@
 @{
     ViewData["Title"] = "Details";
 }
+<nav></nav>
+<main>
+    <section>
+        <h1>Details</h1>
+    </section>
+    <table>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Admin.FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Admin.LastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Admin.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Admin.Password)
+            </th>
+        </tr>
+        <tr>
+            <td>
+                @Html.DisplayFor(model => model.Admin.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.Admin.LastName)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.Admin.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.Admin.Password)
+            </td>
+        </tr>
+    </table>
+    <div class="container">
+        <a class="btn btn--standard box-shadow" asp-page="./Edit" asp-route-id="@Model.Admin.Id">Edit</a>
+        <a class="btn btn--standard box-shadow" asp-page="./List">Back to List</a>
+    </div>
+</main>
 
-<h1>Details</h1>
 
-<div>
-    <h4>Admin</h4>
-    <hr />
-    <dl class="row">
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Admin.FirstName)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Admin.FirstName)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Admin.LastName)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Admin.LastName)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Admin.Email)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Admin.Email)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Admin.Password)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Admin.Password)
-        </dd>
-    </dl>
-</div>
-<div>
-    <a asp-page="./Edit" asp-route-id="@Model.Admin.Id">Edit</a> |
-    <a asp-page="./Index">Back to List</a>
-</div>

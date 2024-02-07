@@ -44,7 +44,7 @@ namespace FribergCarRentalsRazorP.Pages.Admins
                 return Page();
             }
             adminRepository.Update(Admin);
-            return RedirectToPage("./Index");
+            return RedirectToPage("./Home");
         }
     }
 }

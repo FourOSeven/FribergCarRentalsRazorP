@@ -4,43 +4,47 @@
 @{
     ViewData["Title"] = "Delete";
 }
-
-<h1>Delete</h1>
-
-<h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>Admin</h4>
-    <hr />
-    <dl class="row">
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Admin.FirstName)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Admin.FirstName)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Admin.LastName)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Admin.LastName)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Admin.Email)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Admin.Email)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Admin.Password)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Admin.Password)
-        </dd>
-    </dl>
-    
-    <form method="post">
-        <input type="hidden" asp-for="Admin.Id" />
-        <input type="submit" value="Delete" class="btn btn-danger" /> |
-        <a asp-page="./Index">Back to List</a>
-    </form>
-</div>
+<nav></nav>
+<main>
+    <section>
+        <h1>Delete</h1>
+		<h3>Are you sure you want to delete this?</h3>
+    </section>
+    <table>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Admin.FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Admin.LastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Admin.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Admin.Password)
+            </th>
+        </tr>
+        <tr>
+            <td>
+                @Html.DisplayFor(model => model.Admin.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.Admin.LastName)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.Admin.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.Admin.Password)
+            </td>
+        </tr>
+    </table>
+    <div class="container">
+		<form method="post">
+			<input type="hidden" asp-for="Admin.Id" />
+			<input class="btn btn--negativ box-shadow" type="submit" value="Delete"/>
+			<a class="btn btn--standard box-shadow" asp-page="./List">Back to List</a>
+		</form>
+    </div>
+</main>

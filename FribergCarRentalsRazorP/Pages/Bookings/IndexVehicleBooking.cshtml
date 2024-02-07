@@ -4,57 +4,55 @@
 @{
     ViewData["Title"] = "IndexVehicleBooking";
 }
-
-<h1>IndexCustomer</h1>
-
-<p>
-    <a asp-page="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
+<nav>
+    <ul></ul>
+</nav>
+<main>
+    <section>
+        <h1>Vehicles</h1>
+	</section>
+    <table>
         <tr>
-			<th>
-				@Html.DisplayNameFor(model => model.Vehicles.ElementAt(0).VehiclePicture)
-			</th>
+		    <th>
+			    @Html.DisplayNameFor(model => model.Vehicles.ElementAt(0).VehiclePicture)
+		    </th>
             <th>
                 @Html.DisplayNameFor(model => model.Vehicles.ElementAt(0).Make)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Vehicles.ElementAt(0).Model)
             </th>
-            <th>
+             <th>
                 @Html.DisplayNameFor(model => model.Vehicles.ElementAt(0).ModelYear)
-            </th>
+              </th>
             <th>
-                @Html.DisplayNameFor(model => model.Vehicles.ElementAt(0).Price)
+              @Html.DisplayNameFor(model => model.Vehicles.ElementAt(0).Price)
             </th>
             <th></th>
         </tr>
-    </thead>
-    <tbody>
         @foreach (var item in Model.Vehicles)
         {
             <tr>
-				<td>
-					@Html.DisplayFor(modelItem => item.VehiclePicture)
-				</td>
+		        <td>
+			        <img style="width:10vmax;" src="@Html.DisplayFor(modelItem => item.VehiclePicture)" />
+			    </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Make)
+                   @Html.DisplayFor(modelItem => item.Make)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Model)
+                   @Html.DisplayFor(modelItem => item.Model)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.ModelYear)
+                   @Html.DisplayFor(modelItem => item.ModelYear)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Price)
+				    <p>@Html.DisplayFor(modelItem => item.Price)Kr</p>
                 </td>         
                 <td>
-                    <a asp-page="./Create" asp-route-vehicleId="@item.Id">Book</a> |
-                    <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                    <a class="btn btn--positiv box-shadow" asp-page="./Create" asp-route-vehicleId="@item.Id">Book</a>
+                    <a class ="btn btn--standard box-shadow" asp-page="/Vehicles/Details" asp-route-id="@item.Id">Details</a>
                 </td>
             </tr>
         }
-    </tbody>
-</table>
+    </table>
+</main>
