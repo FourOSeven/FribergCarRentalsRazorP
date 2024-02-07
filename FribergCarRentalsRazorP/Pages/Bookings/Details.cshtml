@@ -60,7 +60,6 @@
         </td>
 		<td>
 				@Html.DisplayFor(model => model.Booking.Customer.Email)
-
         </td>
         <td>
 				@Html.DisplayFor(model => model.Booking.Vehicle.Make)
@@ -71,14 +70,13 @@
         <td>
 				@Html.DisplayFor(model => model.Booking.Vehicle.ModelYear)
         </td>
-			<td>	
+		<td>	
 				<p>@Html.DisplayFor(model => model.Booking.Vehicle.Price)Kr</p>
         </td>
     </tr>
 </table>
     <section>
         <div>
-            <a class="btn btn--standard box-shadow" asp-page="./Edit" asp-route-id="@Model.Booking.Id">Edit date</a>
             <a class="btn btn--standard box-shadow" asp-page="./Index">Back to List</a>
 		</div>
 	</section>
