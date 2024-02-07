@@ -1,50 +1,18 @@
-/*html {
-  font-size: 14px;
-}
-
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
-}
-
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
-}
-
-html {
-  position: relative;
-  min-height: 100%;
-}
-
-body {
-  margin-bottom: 60px;
-}*/
 body {
     display:flex;
     height:100%;
     flex-direction:column;
-    /*margin: 0;*/
     background-color: #E3EBEE;
     font-family: Verdana;
     font-size: small;
     padding:1vmax;
 }
-.box-shadow {
-    border-radius:0.5vmax;
-    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .25);
-}
-.loggo {
-    width: 10vmax;
-}
-
 header {
     display: flex;
     justify-content: center;
     width: auto;
     padding: 1vmax;
-    background-color: #E3EBEE;
-    
+    background-color: #E3EBEE;    
 }
 main {
     display:flex;
@@ -57,14 +25,12 @@ main {
     background-color: #f3f3f3;
 }
 nav{
-
     display: flex;
     justify-content: center;
     background-color: #f3f3f3;
     border: transparent;
     border-top-right-radius: 0.5vmax;
     border-top-left-radius: 0.5Vmax;
-    /*Får se om den här margin bråkar med ul i andra delar av koden*/
     margin-top:0;
     margin-bottom: 0;
     padding:1vmax;
@@ -76,6 +42,12 @@ section {
     text-align: center;
     border-radius: 0.5vmax;
 
+}
+.footer {
+    bottom: 0;
+    width: auto;
+    white-space: nowrap;
+    line-height: 60px;
 }
 .container{
     display:flex;
@@ -93,69 +65,18 @@ label{
 }
 .loggo{
     justify-content:center;
-    width: 14vmax;   
+    width: 10vmax;   
 }
-.wp--color-yellow {
-    background-color: #FEC544;
-    color: black;
-    border: 0.1vmax solid #9E9E9E;
-    border-radius: 1vmax
-}
-.wp--color-brown {
-  background-color: #715F4B;
-  color: #f3f3f3;
-  border: 0.1vmax solid #9E9E9E;
-  border-radius: 1vmax;
-}
-
-.wp--color-dark-grey {
-  background-color: #C2C2C2;
-  color: black;
-  border: 0.1vmax solid black;
-  border-radius: 1vmax;
-}
-
-.wp--color-black {
-  background-color: black;
-  color: #f3f3f3;
-  border: 0.1vmax solid #9E9E9E;
-  border-radius: 1vmax;
-}
-
-.wp--color-light-grey {
-  background-color: #f3f3f3;
-  color: black;
-  border: 0.1vmax solid #9E9E9E;
-  border-radius: 1vmax;
-}
-
-.wp--color-green {
-  background-color: #55FF94;
-  color: black;
-  border: 0.1vmax solid #9E9E9E;
-  border-radius: 1vmax;
-}
-
-.wp--color-red {
-    background-color: #FE4D49;
-    color: black;
-    border: 0.1vmax solid #9E9E9E;
-    border-radius: 1vmax;
-}
-
 h1 {
   font-family: Georgia;
   font-size: xx-large;
 }
-
 h2 {
   font-size: large;
 }
-
 h3 {
   font-size: medium;
 }
-
 h4 {
   font-size: small;
 }
@@ -166,80 +87,50 @@ a:link{
     text-decoration:none;
 }
 .btn {
-  padding: 0.2vmax;
-  border-radius: 0.2vmax;
-  font-size: 1em;
-  font-family:verdana;
-  margin: 0.3vmax;
-  transition-duration: 0.4s;
+    padding: 0.2vmax;
+    border-radius: 0.2vmax;
+    font-size: 1em;
+    font-family: verdana;
+    margin: 0.3vmax;
+    transition-duration: 0.4s;
+    border-style: none;
 }
-
 .btn--standard {
     background-color: #E3EBEE;
     color: black;
-   /* border: 0.1vmax solid #9E9E9E;*/
 }
-
 .btn--standard:hover {
     background-color: #f3f3f3;
     color: black;
 }
-
-.btn--function {
-  background-color: #f3f3f3;
-  color: black;
-  /*border: 0.1vmax solid #9E9E9E;*/
-}
-
-.btn--function:hover {
-  background-color: #715F4B;
-  color: #f3f3f3;
-}
-
 .btn--positiv {
     background-color: #82FF9F;
     color: black;
-    /*border: 0.1vmax solid #9E9E9E;*/
 }
-
 .btn--positiv:hover {
     background-color: #4DFF61;
     color: black;
 }
-
 .btn--negativ {
     background-color: #FE8080 ;
     color: black;
-    /*border: 0.1vmax solid #9E9E9E;*/
 }
-
-    .btn--negativ:hover {
-        background-color: #FE4D49;
-    }
-
-/*input[type="submit"]{
-    padding-block:0;
-    border-width:0;
-    padding-inline:0;
-    box-sizing:0;
-    border-color:transparent;
-}*/
+.btn--negativ:hover {
+    background-color: #FE4D49;
+}
 table{
     display:flex;
     justify-content:center;  
     overflow-x: auto;
     margin-bottom:0.8vmax;
 }
-
 tr {
     border: 1vmax solid #EDEDED;
     text-align: left;
 }
-
 tr:nth-child(odd) {
     background-color: #EDEDED;
 }
-
 th {
     padding:0.5vmax;
     background-color: #E3EBEE;
@@ -253,11 +144,14 @@ ul {
     justify-content:center;
   text-align: left;
 }
-
 ol {
   text-align: left;
 }
 li{
     display:flex;
     justify-content:center;
+}
+.box-shadow {
+    border-radius: 0.5vmax;
+    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .25);
 }

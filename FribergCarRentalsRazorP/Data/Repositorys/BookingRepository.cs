@@ -7,7 +7,6 @@ namespace FribergCarRentalsRazorP.Data.Repositorys
     {
         private readonly FribergCarRentalsRazorPContext fribergCarRentalsRazorPContext;
 
-
         public BookingRepository(FribergCarRentalsRazorPContext fribergCarRentalsRazorPContext)
         {
             this.fribergCarRentalsRazorPContext = fribergCarRentalsRazorPContext;

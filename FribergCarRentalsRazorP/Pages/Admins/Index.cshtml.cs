@@ -36,7 +36,8 @@ namespace FribergCarRentalsRazorP.Pages.Admins
             Admins = adminRepository.GetAll();
             var adminFound = Admins.FirstOrDefault(c => c.Email == admin.Email && c.Password == admin.Password);
             if (adminFound != null)
-            {   
+            {
+                HttpContext.Session.SetInt32("AdminId", adminFound.Id);
                 return RedirectToPage("./Home");
             }
             ViewData["ErrorMessage"] = "Failed to login. Please check your email and/or password";
