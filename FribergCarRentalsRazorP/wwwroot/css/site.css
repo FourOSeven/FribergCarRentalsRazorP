@@ -87,13 +87,13 @@ a:link{
     text-decoration:none;
 }
 .btn {
-    padding: 0.2vmax;
+    padding: 0.4vmax;
     border-radius: 0.2vmax;
     font-size: 1em;
     font-family: verdana;
     margin: 0.3vmax;
     transition-duration: 0.4s;
-    border-style: none;
+    border-style: initial;
 }
 .btn--standard {
     background-color: #E3EBEE;
