@@ -1,6 +1,4 @@
-﻿
-using FribergCarRentalsRazorP.Data.Interfaces;
-using Microsoft.AspNetCore.Mvc.RazorPages;
+﻿using FribergCarRentalsRazorP.Data.Interfaces;
 
 namespace FribergCarRentalsRazorP.Helpers
 {

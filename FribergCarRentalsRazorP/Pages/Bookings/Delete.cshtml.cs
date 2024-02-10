@@ -8,16 +8,21 @@ using Microsoft.EntityFrameworkCore;
 using FribergCarRentalsRazorP.Data;
 using FribergCarRentalsRazorP.Data.Interfaces;
 using FribergCarRentalsRazorP.Data.Repositorys;
+using FribergCarRentalsRazorP.Helpers;
 
 namespace FribergCarRentalsRazorP.Pages.Bookings
 {
     public class DeleteModel : PageModel
     {
         private readonly IBooking bookingRepository;
+        private readonly IAdmin adminRepository;
+        private readonly ICustomer customerRepository;
 
-        public DeleteModel(IBooking bookingRepository)
+        public DeleteModel(IBooking bookingRepository, IAdmin adminRepository, ICustomer customerRepository)
         {
             this.bookingRepository = bookingRepository;
+            this.adminRepository = adminRepository;
+            this.customerRepository = customerRepository;
         }
 
         [BindProperty]
@@ -25,22 +30,28 @@ namespace FribergCarRentalsRazorP.Pages.Bookings
 
         public IActionResult OnGet(int id)
         {
-            if (id == null)
+            if (AdminLoginCheck.IsAdminLoggedIn(HttpContext.Session.GetInt32("AdminId"), adminRepository) ||
+                CustomerLoginCheck.IsCustomerLoggedIn(HttpContext.Session.GetInt32("CustomerId"), customerRepository))
             {
-                return NotFound();
-            }
+                if (id == null)
+                {
+                    return NotFound();
+                }
 
-            var booking = bookingRepository.GetById(id);
+                var booking = bookingRepository.GetById(id);
 
-            if (booking == null)
-            {
-                return NotFound();
-            }
-            else
-            {
+                if (booking == null)
+                {
+                    return NotFound();
+                }
+                else
+                {
                 Booking = booking;
+                }
+                return Page();
             }
-            return Page();
+            return RedirectToPage("/Index");
+            
         }
 
         public IActionResult OnPost(Booking booking)

@@ -10,16 +10,21 @@ using FribergCarRentalsRazorP.Data;
 using FribergCarRentalsRazorP.Data.Interfaces;
 using FribergCarRentalsRazorP.Data.Repositorys;
 using Azure.Core.GeoJson;
+using FribergCarRentalsRazorP.Helpers;
 
 namespace FribergCarRentalsRazorP.Pages.Bookings
 {
     public class EditModel : PageModel
     {
         private readonly IBooking bookingRepository;
+        private readonly ICustomer customerRepository;
+        private readonly IAdmin adminRepository;
 
-        public EditModel(IBooking bookingRepository)
+        public EditModel(IBooking bookingRepository, ICustomer customerRepository, IAdmin adminRepository)
         {
             this.bookingRepository = bookingRepository;
+            this.customerRepository = customerRepository;
+            this.adminRepository = adminRepository;
         }
 
         [BindProperty]
@@ -27,13 +32,18 @@ namespace FribergCarRentalsRazorP.Pages.Bookings
 
         public IActionResult OnGet(int id)
         {
-            var booking = bookingRepository.GetById(id);
-            if (booking == null)
+            if (AdminLoginCheck.IsAdminLoggedIn(HttpContext.Session.GetInt32("AdminId"), adminRepository) ||
+                CustomerLoginCheck.IsCustomerLoggedIn(HttpContext.Session.GetInt32("CustomerId"), customerRepository))
             {
-                return NotFound();
+                 var booking = bookingRepository.GetById(id);
+                if (booking == null)
+                {
+                    return NotFound();
+                }
+                Booking = booking;
+                return Page();
             }
-            Booking = booking;
-            return Page();
+            return RedirectToPage("/Index");     
         }
 
         // To protect from overposting attacks, enable the specific properties you want to bind to.

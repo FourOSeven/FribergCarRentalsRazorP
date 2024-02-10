@@ -7,14 +7,27 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using FribergCarRentalsRazorP.Data;
+using FribergCarRentalsRazorP.Data.Repositorys;
+using FribergCarRentalsRazorP.Helpers;
+using FribergCarRentalsRazorP.Data.Interfaces;
 
 namespace FribergCarRentalsRazorP.Pages.Customers
 {
     public class LogoutModel : PageModel
     {
-        public IActionResult OnGet()
+        private readonly ICustomer customerRepository;
+
+        public LogoutModel(ICustomer customerRepository)
         {
-            return Page();
+            this.customerRepository = customerRepository;
+        }
+        public IActionResult OnGet()
+        {           
+            if (!CustomerLoginCheck.IsCustomerLoggedIn(HttpContext.Session.GetInt32("CustomerId"), customerRepository))
+            {
+                   return RedirectToPage("/Index"); 
+            }
+            return Page();           
         }
 
         // To protect from overposting attacks, enable the specific properties you want to bind to.

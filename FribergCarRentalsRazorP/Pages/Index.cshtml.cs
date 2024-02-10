@@ -14,7 +14,6 @@ namespace FribergCarRentalsRazorP.Pages
 
         public void OnGet()
         {
-
         }
     }
 }

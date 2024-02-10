@@ -4,7 +4,7 @@ namespace FribergCarRentalsRazorP.Helpers
 {
     public static class CustomerLoginCheck
     {
-        public static bool IsAdminLoggedIn(int? id, ICustomer customerRepository)
+        public static bool IsCustomerLoggedIn(int? id, ICustomer customerRepository)
         {
             var customer = customerRepository.GetById(id);
             if (customer == null)
