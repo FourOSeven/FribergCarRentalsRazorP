@@ -8,23 +8,31 @@ using Microsoft.EntityFrameworkCore;
 using FribergCarRentalsRazorP.Data;
 using FribergCarRentalsRazorP.Data.Repositorys;
 using FribergCarRentalsRazorP.Data.Interfaces;
+using FribergCarRentalsRazorP.Helpers;
 
 namespace FribergCarRentalsRazorP.Pages.Vehicles
 {
     public class IndexModel : PageModel
     {
         private readonly IVehicle vehicleRepository;
+        private readonly IAdmin adminRepository;
 
-        public IndexModel(IVehicle vehicleRepository)
+        public IndexModel(IVehicle vehicleRepository, IAdmin adminRepository)
         {
             this.vehicleRepository = vehicleRepository;
+            this.adminRepository = adminRepository;
         }
 
         public IEnumerable<Vehicle> Vehicles { get; set; } = default!;
 
-        public void OnGet()
+        public IActionResult OnGet()
         {
-            Vehicles = vehicleRepository.GetAll();//await _context.Admins.ToListAsync();
+            if (!AdminLoginCheck.IsAdminLoggedIn(HttpContext.Session.GetInt32("AdminId"), adminRepository))
+            {
+                return RedirectToPage("/Index");
+            }
+            Vehicles = vehicleRepository.GetAll();
+            return Page();
         }
     }
 }

@@ -27,8 +27,9 @@ namespace FribergCarRentalsRazorP.Pages.Customers
 
         public IActionResult OnGet()
         {
-            ViewData["NotLoggedIn"] = TempData["NotLoggedIn"];
 
+
+            ViewData["NotLoggedIn"] = TempData["NotLoggedIn"];
 			return Page();
         }
 

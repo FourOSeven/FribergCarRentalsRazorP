@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using FribergCarRentalsRazorP.Data;
 using FribergCarRentalsRazorP.Data.Repositorys;
 using FribergCarRentalsRazorP.Data.Interfaces;
+using FribergCarRentalsRazorP.Helpers;
 
 namespace FribergCarRentalsRazorP.Pages.Admins
 {
@@ -23,6 +24,10 @@ namespace FribergCarRentalsRazorP.Pages.Admins
 
         public IActionResult OnGet()
         {
+            if (!AdminLoginCheck.IsAdminLoggedIn(HttpContext.Session.GetInt32("AdminId"), adminRepository))
+            {
+                return RedirectToPage("/Index");
+            }
             return Page();
         }
 

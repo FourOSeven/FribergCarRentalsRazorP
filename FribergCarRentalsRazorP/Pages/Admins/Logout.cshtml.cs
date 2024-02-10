@@ -14,6 +14,8 @@ namespace FribergCarRentalsRazorP.Pages.Admins
         // For more details, see https://aka.ms/RazorPagesCRUD.
         public IActionResult OnPost()
         {
+            HttpContext.Session.Remove("AdminId");
+            HttpContext.Session.Remove("AdminCustomerId");
             return RedirectToPage("/Index");
         }
     }

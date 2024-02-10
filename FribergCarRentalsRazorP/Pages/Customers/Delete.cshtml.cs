@@ -8,16 +8,19 @@ using Microsoft.EntityFrameworkCore;
 using FribergCarRentalsRazorP.Data;
 using FribergCarRentalsRazorP.Data.Interfaces;
 using FribergCarRentalsRazorP.Data.Repositorys;
+using FribergCarRentalsRazorP.Helpers;
 
 namespace FribergCarRentalsRazorP.Pages.Customers
 {
     public class DeleteModel : PageModel
     {
         private readonly ICustomer customerRepository;
+        private readonly IAdmin adminRepository;
 
-        public DeleteModel(ICustomer customerRepository)
+        public DeleteModel(ICustomer customerRepository, IAdmin adminRepository)
         {
             this.customerRepository = customerRepository;
+            this.adminRepository = adminRepository;
         }
 
         [BindProperty]
@@ -25,6 +28,10 @@ namespace FribergCarRentalsRazorP.Pages.Customers
 
         public IActionResult OnGet(int id)
         {
+            if (!AdminLoginCheck.IsAdminLoggedIn(HttpContext.Session.GetInt32("AdminId"), adminRepository))
+            {
+                return RedirectToPage("/Index");
+            }
             if (id == null)
             {
                 return NotFound();

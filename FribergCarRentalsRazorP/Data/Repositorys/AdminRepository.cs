@@ -27,7 +27,7 @@ namespace FribergCarRentalsRazorP.Data.Repositorys
             return FribergCarRentalsRazorPContext.Admins.OrderBy(a => a.LastName);
         }
 
-        public Admin GetById(int id)
+        public Admin GetById(int? id)
         {
             return FribergCarRentalsRazorPContext.Admins.FirstOrDefault(a => a.Id == id);
         }
